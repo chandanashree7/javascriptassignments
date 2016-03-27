@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Palidrome Program</title>
+	<script type="text/javascript">
+	function palidrome () {
+		var inputdata=document.getElementById("word").value;
+		if(isPalidrome(inputdata)){
+			console.log("Input is Palidrome");
+		}
+		else
+		{
+			console.log("Input is not Palidrome");
+		}
+	}
+	function isPalidrome(inputdata)
+	{
+		var start=0;
+		var end=inputdata.length-1;
+		while(start<end)
+		{
+			console.log("Start Position ::"+start+":: Character ::"+inputdata[start]);
+			console.log("End Position ::"+end+":: Character ::"+inputdata[end]);
+			if(inputdata[start]!=inputdata[end])
+			{
+				return false;
+			}
+			start++;
+			end--;
+		}
+		return true;
+	}
+	</script>
+</head>
+<body>
+	Palidrome String: <input type="text" id="word" name="word"><br>
+	<input type="submit" value="Submit" onclick="palidrome()">
+</body>
+</html>
