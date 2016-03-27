@@ -5,16 +5,16 @@
 	<script type="text/javascript">
 	function palidrome () {
 		var inputdata=document.getElementById("word").value;
+		var output="Output ::";
 		if(isPalidrome(inputdata)){
-			console.log("Input is Palidrome");
+			output +=inputdata+" is palindrome";
+		} else {
+			output +=inputdata+" is not palindrome";
 		}
-		else
-		{
-			console.log("Input is not Palidrome");
-		}
+		document.getElementById("out").innerHTML=output;
 	}
-	function isPalidrome(inputdata)
-	{
+
+	function isPalidrome(inputdata)	{
 		var start=0;
 		var end=inputdata.length-1;
 		while(start<end)
@@ -35,5 +35,8 @@
 <body>
 	Palidrome String: <input type="text" id="word" name="word"><br>
 	<input type="submit" value="Submit" onclick="palidrome()">
+	<br>
+	<div id="out">
+	</div>
 </body>
 </html>
