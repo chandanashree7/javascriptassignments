@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// Call Back
+		function testCallBack(call, a, b){
+			console.log("Hello!!");
+			call(a,b); 
+		}
+
+		function init(arg1,arg2){
+			console.log("invoked init method");
+		}
+
+		var test = function(arg,arg1){
+			console.log("invoked test method -- "+arg+":"+arg1);
+		}
+
+
+		testCallBack(test, 1, 2);
+		testCallBack(init, 3, 4);
+
+		// Closure
+		function testClosure(val){
+			return function(val1){
+				return val + val1;
+			}
+		}
+
+		var a = testClosure(10);
+		console.log("Closure - 1 :"+a(11));
+		var a = testClosure("Test Data");
+		console.log("Closure - 2 :"+a("- c"));
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

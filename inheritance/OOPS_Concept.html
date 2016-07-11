@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// Person Class contains 
+		// properties and methods or function
+		function Person(n, a){
+			// Properties
+			this.name = n;
+			this.age = a;
+
+			// functions
+			this.walk = function(){
+			}
+			this.eat = function(){				
+			}
+			this.talk = function(){				
+			}
+			this.display = function(){
+				return "Hello "+this.name;
+			}
+		}
+
+		// Inheritance
+		function Student(){
+			this.testData = function(){
+				console.log("Student - testData function");
+			}
+		}
+
+		function Teacher(){
+		}
+
+		// Object Creation
+		// Type 1
+		var personObj = new Person("Chandana", 10);
+		console.log("Type 1 - personObj::"+personObj.display());
+
+		var personObj1 = new Person("Vinay", 12);
+		console.log("Type 1 - personObj1::"+personObj1.display());
+
+		// Type 2
+		var obj1 = {};
+		console.log("obj1::"+obj1);
+		// Type 3 - Prototype
+		var obj2 = Object.create(Person.prototype);
+		console.log("Type 2::"+obj2);
+
+		// Inheritance Concept
+		Student.prototype = new Person("User1", 10);
+		var student = new Student();
+		console.log("Inheritance Student ObJ - 1::"+student.display());
+		console.log("Inheritance Student ObJ - 1::"+student.testData());
+		Student.prototype.display = function(){
+			return "Welcome Student - "+this.name;
+		}
+		console.log("Inheritance Student ObJ - 2::"+student.display());
+		
+		// Inheritance Concept
+		Teacher.prototype = new Person("Teacher", 10);
+		var teacher = new Teacher();
+		console.log("Inheritance Teacher ObJ - 1::"+teacher.display());
+		Teacher.prototype.display = function(){
+			return "Welcome "+this.name;
+		}
+		console.log("Inheritance Teacher ObJ - 2::"+teacher.display());
+	</script>
+</head>
+<body>
+
+</body>
+</html>

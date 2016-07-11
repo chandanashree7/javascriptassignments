@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Common Programs</title>
+	<script src="factorial.js"></script>
+	<script src="fibonacci.js"></script>
+	<script src="primenumber.js"></script>
+	<script src="summation.js"></script>
+	<script src="exponential.js"></script>
+	<script src="palindrom.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		// Factorial Function
+		var fact = factorial();
+		var result = fact.recursive(5);
+		document.write("===========Factorial===========");
+		document.write("<br>");
+		document.write("Factorial Recursive of 5 :"+result);
+		document.write("<br>");
+		result = fact.loop(4);
+		document.write("Factorial Loop of 4 :"+result);
+		document.write("<br>");
+
+		// Fibonacci Function
+		var fib = fibonacci();
+		var result = fib.recursive(10);
+		document.write("===========Fibonacci===========");
+		document.write("<br>");
+		document.write("Fibonacci Recursive of 10 position :"+result);
+		document.write("<br>");
+		result = fib.loop(6);
+		document.write("Fibonacci Loop of 6 position :"+result);
+		document.write("<br>");
+
+		// Prime Number
+		document.write("===========Prime Number===========");
+		document.write("<br>");
+		var primeInput = 10;
+		var primeNumber = isPrimenumber(primeInput);
+		if(primeNumber) {
+			document.write(primeInput +" is Prime Number");
+		} else {
+			document.write(primeInput +" is not a Prime Number");
+		}
+		document.write("<br>");
+
+		// Summation Function
+		var summ = summation();
+		var result = summ.recursive(5);
+		document.write("===========Summation===========");
+		document.write("<br>");
+		document.write("Summation Recursive of 5 :"+result);
+		document.write("<br>");
+		result = summ.loop(4);
+		document.write("Summation Loop of 4 :"+result);
+		document.write("<br>");
+
+		// Exponential Function
+		var exp = exponential();
+		var result = exp.recursive(2,5);
+		document.write("===========Exponential===========");
+		document.write("<br>");
+		document.write("Exponential Recursive of n=2,e=5 :"+result);
+		document.write("<br>");
+		result = exp.loop(3,4);
+		document.write("Exponential Loop of n=3,e=4 :"+result);
+		document.write("<br>");
+
+		// Palindrom Function
+		var strInput = 'mom';
+		var pal = isStringPalindrom(strInput)
+		document.write("===========String Palindrom===========");
+		document.write("<br>");
+		document.write(strInput + " is Palindrom : "+pal);
+		document.write("<br>");
+		var numInput = 1001;
+		pal = isNumberPalindrom(numInput)
+		document.write("===========Number Palindrom===========");
+		document.write("<br>");
+		document.write(numInput + " is Palindrom : "+pal);
+		document.write("<br>");
+	</script>
+</body>
+</html>
